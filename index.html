@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <center>
+      
+        <form id="myform" onsubmit="weatherinfo(event)">
+            <h1>Weather App</h1>
+            <input type="text" placeholder="Enter city" id="info"/>
+            <button>Get Weather</button>
+        </form>
+        <div id="display" style="background-color: rgb(158, 197, 241); color: rebeccapurple;">
+
+        </div>
+    </center>
+    <script src="weather.js"></script>
+</body>
+</html>
