@@ -6,19 +6,116 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        center {
+            width: 90%;
+            max-width: 450px;
+            animation: slideIn 1s ease-out;
+        }
+
+        h1 {
+            color: white;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            animation: glow 2s infinite alternate;
+        }
+
+        #myform {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            animation: fadeIn 1.2s ease;
+        }
+
+        #info {
+            width: 90%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            background: #ffffffcc;
+            margin-bottom: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        #info:focus {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px white;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            background: #673ab7;
+            color: white;
+            font-size: 17px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: #512da8;
+            box-shadow: 0 0 12px white;
+        }
+
+        #display {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 18px;
+            display: none;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease;
+            font-size: 18px;
+            color: #2e0854;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes slideIn {
+            from {transform: translateY(-40px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes glow {
+            from {text-shadow: 0 0 10px white;}
+            to {text-shadow: 0 0 25px white;}
+        }
+    </style>
+
 </head>
 <body>
     <center>
-      
         <form id="myform" onsubmit="weatherinfo(event)">
             <h1>Weather App</h1>
             <input type="text" placeholder="Enter city" id="info"/>
             <button>Get Weather</button>
         </form>
-        <div id="display" style="background-color: rgb(158, 197, 241); color: rebeccapurple;">
 
-        </div>
+        <div id="display"></div>
     </center>
+
     <script src="weather.js"></script>
 </body>
 </html>
